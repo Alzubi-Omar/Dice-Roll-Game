@@ -1,6 +1,6 @@
 is a simple fun two players game.
 
-To Play :
+To Play : https://alzubi-omar.github.io/Dice-Roll-Game/
 
 The Game Rules:
 
