@@ -421,7 +421,7 @@ footer button:hover {
 
   .show-modal {
     bottom: unset;
-    top: 88%;
+    top: 0;
     font-size: medium;
     padding: 5px;
     border-radius: 10px;
@@ -430,6 +430,7 @@ footer button:hover {
     background: none;
     box-shadow: none;
     color: #fff;
+    z-index: unset;
   }
 
   footer {
@@ -447,6 +448,11 @@ footer button:hover {
 
   #currentYear {
     font-size: x-small;
+  }
+
+  .modal {
+    height: 25rem;
+    width: 90%;
   }
 
   .modal h1 {
