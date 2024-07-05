@@ -452,7 +452,7 @@ footer button:hover {
 
   .modal {
     height: 25rem;
-    width: 90%;
+    width: max-content;
   }
 
   .modal h1 {
