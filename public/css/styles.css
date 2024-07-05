@@ -14,7 +14,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
@@ -35,23 +36,32 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   overflow: hidden;
+  margin: auto;
 }
 
 .main-content {
   display: flex;
   margin: 10px;
   width: 45%;
+  padding: 10px;
 }
 
 .player {
   position: relative;
-  flex: 50%;
+  flex: 1 1 45%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   transition: all 0.75s;
   margin: 20px;
   text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.player:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* ELEMENTS */
@@ -62,6 +72,14 @@ main {
   letter-spacing: 1px;
   word-spacing: 2px;
   margin-bottom: 1rem;
+}
+
+.player--0 h2:hover {
+  color: #f44336;
+}
+
+.player--1 h2:hover {
+  color: #2196f3;
 }
 
 .score {
@@ -125,7 +143,6 @@ main {
   height: 12rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
   align-self: center;
-  background-color: salmon;
 }
 
 .sideButtons {
@@ -146,7 +163,6 @@ main {
   border: none;
   background-color: rgba(224, 152, 136, 0.5);
   color: #444;
-  border-radius: 4px;
   font-weight: 700;
   backdrop-filter: blur(10px);
   border-radius: 1em;
@@ -307,12 +323,10 @@ footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 2rem;
+  margin-top: auto;
   background-color: #f0f0f0;
+  padding: 0 2rem;
   width: 100%;
-  margin: 0 auto;
-  bottom: 0;
-  position: absolute;
 }
 
 footer p {
@@ -342,9 +356,10 @@ footer button:hover {
 /* Extra Small Devices (Phones): */
 @media (max-width: 576px) {
   main {
+    margin-top: auto;
     width: 90%;
-    height: 35rem;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+    padding: unset;
+    padding-bottom: 20px;
     overflow: hidden;
   }
 
@@ -362,7 +377,8 @@ footer button:hover {
     margin: unset;
     margin-bottom: 5px;
     justify-content: center;
-    box-sizing: border-box;
+    box-sizing: content-box;
+    width: 80%;
   }
 
   .name {
@@ -371,13 +387,17 @@ footer button:hover {
   }
 
   .current {
-    padding: 10px;
+    padding: 1px;
+  }
+
+  .current-label {
+    font-size: medium !important;
   }
 
   .dice {
     position: fixed;
     left: 90px;
-    top: 12rem;
+    top: 11rem;
     transform: translateX(-50%);
     height: 4rem;
     box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
@@ -389,6 +409,7 @@ footer button:hover {
     align-items: flex-start;
     width: 80%;
     margin: unset;
+    padding: 0 10px;
   }
 
   .btn {
@@ -400,11 +421,15 @@ footer button:hover {
 
   .show-modal {
     bottom: unset;
-    top: 0;
+    top: 88%;
     font-size: medium;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     margin: 2px;
+    right: 0;
+    background: none;
+    box-shadow: none;
+    color: #fff;
   }
 
   footer {
@@ -437,7 +462,6 @@ footer button:hover {
 /* Small Devices (Tablets): */
 @media (min-width: 577px) and (max-width: 768px) {
   main {
-    display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -451,6 +475,7 @@ footer button:hover {
     align-items: center;
     align-items: start;
     width: 100%;
+    padding: unset;
   }
 
   .player {
@@ -477,7 +502,6 @@ footer button:hover {
   .sideButtons {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     position: absolute;
     top: 70%;
     width: 90%;
@@ -494,11 +518,6 @@ footer button:hover {
     font-size: 0.8rem;
     background-color: unset;
     box-shadow: none;
-  }
-
-  footer {
-    padding: 0 2rem;
-    margin: 0 auto;
   }
 }
 
@@ -533,5 +552,11 @@ footer button:hover {
     position: absolute;
     bottom: 100%;
     left: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    width: 60rem !important;
   }
 }

@@ -8,4 +8,4 @@ Player 1 starts: rolls dice --> Generate Random Number --> Display dice roll -->
 
 Player holds score --> Add current score to toal score --> score >= 100 ? (No) : Switch Player (Yes) : Current PLauer Wins!!
 
-Player resets game --> Set all scores to 0 --> Set player 1 as starting player
+Player resets game --> Set all scores to 0 --> Set player 1 as the starting player
